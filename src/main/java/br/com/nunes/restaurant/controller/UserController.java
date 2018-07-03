@@ -44,6 +44,18 @@ public class UserController {
 		return service.getByLogin(username, password);
 	}
 	
+	@ApiOperation(value="Check username availability")
+	@RequestMapping(value="/checkUsername/{username}", method=RequestMethod.GET)
+	public User getUserByUsername(@PathVariable String username){
+		return service.getByUsername(username);
+	}
+	
+	@ApiOperation(value="Check email availability")
+	@RequestMapping(value="/checkEmail", method=RequestMethod.POST)
+	public User getUserByEmail(@Validated @RequestBody String email){
+		return service.getByEmail(email);
+	}
+	
 	@ApiOperation(value="Query all users")
 	@RequestMapping(value="/getAll", method = RequestMethod.GET)
 	public List<User> getAllUsers(){
@@ -99,7 +111,9 @@ public class UserController {
 				user.setPassword(DigestUtils.sha256Hex(user.getPassword()));
 			}*/			
 			service.save(user);
-			return new ResponseEntity<CustomResponse>(new CustomResponse("Successfully updated", true), HttpStatus.OK);			
+			User u = service.getById(user.getId());
+			
+			return ResponseUtils.ok(u);					
 		} else {
 			return new ResponseEntity<CustomResponse>(new CustomResponse("No user found with ID " + user.getId(), false), HttpStatus.NOT_FOUND);
 		}

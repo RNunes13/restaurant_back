@@ -33,6 +33,14 @@ public class UserService {
 	public User getByLogin(String username, String password) {
 		return dao.findByLogin(username, password);
 	}
+	
+	public User getByUsername(String username) {
+		return dao.findByUsername(username);
+	}
+	
+	public User getByEmail(String email) {
+		return dao.findByEmail(email);
+	}
 
 	public void saveList(List<User> users) {
 		dao.save(users);
