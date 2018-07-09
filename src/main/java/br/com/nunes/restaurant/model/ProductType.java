@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
-@Table(name = "produto_type")
+@Table(name = "product_type")
 @ApiModel(value = "Product Type")
 public class ProductType {
 	

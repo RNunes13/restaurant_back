@@ -5,28 +5,28 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.nunes.restaurant.dao.CategoryTypeDao;
-import br.com.nunes.restaurant.model.CategoryType;
+import br.com.nunes.restaurant.dao.ProductCategoryDao;
+import br.com.nunes.restaurant.model.ProductCategory;
 
 @Service
-public class CategoryTypeService {
+public class ProductCategoryService {
 	
 	@Autowired
-	private CategoryTypeDao dao;
+	private ProductCategoryDao dao;
 	
-	public CategoryType save(CategoryType categoryType) {
-		return dao.save(categoryType);
+	public ProductCategory save(ProductCategory productCategory) {
+		return dao.save(productCategory);
 	}
 	
-	public void saveList(List<CategoryType> categoryTypes) {
-		dao.save(categoryTypes);
+	public void saveList(List<ProductCategory> productCategories) {
+		dao.save(productCategories);
 	}
 	
-	public CategoryType get(Long id) {
+	public ProductCategory get(Long id) {
 		return dao.findOne(id);
 	}
 	
-	public List<CategoryType> getAll() {
+	public List<ProductCategory> getAll() {
 		return dao.findAll();
 	}
 	

@@ -14,9 +14,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
-@Table(name = "category_type")
-@ApiModel(value = "Category Type")
-public class CategoryType {
+@Table(name = "product_category")
+@ApiModel(value = "Product Category")
+public class ProductCategory {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
