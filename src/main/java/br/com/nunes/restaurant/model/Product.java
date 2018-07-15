@@ -43,9 +43,8 @@ public class Product {
 	private String unit;
 	
 	@ApiModelProperty(value = "Description")
-	@Column(name = "Description", nullable = false, length = 1000)
+	@Column(name = "Description", length = 1000)
 	@Size(max = 1000, message = "Description field can be up to 1000 characters.")
-	@NotEmpty(message = "Required 'description' field.")
 	private String description;
 
 	public Long getId() {
