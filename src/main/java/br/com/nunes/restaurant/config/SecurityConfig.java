@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		System.out.println("Setting Secutiry...");
+		System.out.println("Setting Security ...");
 		
 		http.addFilterAfter(new WebConfig(), ChannelProcessingFilter.class);
 		

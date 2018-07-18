@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.Size;
@@ -55,11 +54,6 @@ public class Menu {
 	@Column(name = "description", length = 1000)
 	@Size(max = 1000, message = "Description field can be up to 1000 characters")
 	private String description;
-	
-	@ApiModelProperty(value = "Image")
-	@Column(name = "image", nullable = true)
-	@Lob
-	private byte[] image;
 
 	public Long getId() {
 		return id;
@@ -107,14 +101,6 @@ public class Menu {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public byte[] getImage() {
-		return image;
-	}
-
-	public void setImage(byte[] image) {
-		this.image = image;
 	}
 	
 }
